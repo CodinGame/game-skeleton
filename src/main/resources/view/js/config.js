@@ -8,16 +8,6 @@ export const assets = {
   }
 };
 
-export const players = [{
-    name: 'Player 1',
-    avatar: 'https://static.codingame.com/servlet/fileservlet?id=1719285195844&format=viewer_avatar'
-  },
-  {
-    name: 'Player 2',
-    avatar: 'https://static.codingame.com/servlet/fileservlet?id=1717001354716&format=viewer_avatar'
-  }
-];
-
 // List of viewer modules that you want to use in your game
 export const modules = [
   {name: 'entitymanager', class: EntityManager}
