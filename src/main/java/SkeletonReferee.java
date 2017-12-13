@@ -19,7 +19,7 @@ class SkeletonPlayer extends AbstractPlayer {
 
 public class SkeletonReferee implements Referee {
     @Inject private GameManager<SkeletonPlayer> gameManager;
-    @Inject private EntityManager entityManager;
+    @Inject private GraphicEntityModule entityModule;
     
     private int playerCount;
 

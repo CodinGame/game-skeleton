@@ -68,7 +68,7 @@ export const assets = {
   ]
 };
 ```
-You can then use the images in the texture cache with the Entity Module:
+You can then use the images in the texture cache with the Graphic Entity Module:
 ```java
 entityManager.createSprite.setImage("background");
 ```
