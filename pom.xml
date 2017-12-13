@@ -6,25 +6,29 @@
 	<artifactId>skeleton</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
-	<dependencies>
-		<dependency>
-			<groupId>com.codingame.gameengine</groupId>
-			<artifactId>core</artifactId>
-			<version>1.1</version>
-		</dependency>
+    <properties>
+        <gamengine.version>1.2</gamengine.version>
+    </properties>
 
-		<dependency>
-			<groupId>com.codingame.gameengine</groupId>
-			<artifactId>module-entities</artifactId>
-			<version>1.1</version>
-		</dependency>
+    <dependencies>
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>core</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
 
-		<dependency>
-			<groupId>com.codingame.gameengine</groupId>
-			<artifactId>runner</artifactId>
-			<version>1.0</version>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>module-entities</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.codingame.gameengine</groupId>
+            <artifactId>runner</artifactId>
+            <version>${gamengine.version}</version>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
