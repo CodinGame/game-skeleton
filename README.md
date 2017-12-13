@@ -42,3 +42,33 @@ try {
 
 // Check if there is a win / lose situation and call gameManager.endGame(); when game is finished
 ```
+
+## Loading assets
+Assets are expected to be placed in the `src/main/resources/view/assets` folder of your game's project.
+```javascript
+export const assets = {
+  baseUrl: 'assets/',
+  images: {
+    //Each image will be added to the texture cache with the given key.
+    background: 'MyBackround.jpg'
+  },
+  spines: {
+    //Not yet implemented
+  },
+  sprites: [
+    //Each frame of the sprite will be added to the texture cache with the key from the json.
+    //see https://www.leshylabs.com/apps/sstool/
+    'spriteSheet.json'
+  ],
+  fonts: [
+    'myBitmapFont.fnt',
+  ],
+  others: [
+    //Will launch a request for the resource, but cannot yet be used.
+  ]
+};
+```
+You can then use the images in the texture cache with the Entity Module:
+```java
+entityManager.createSprite.setImage("background");
+```
