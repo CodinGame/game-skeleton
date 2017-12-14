@@ -1,4 +1,4 @@
-import { EntityManager } from './EntityManager.js';
+import { GraphicEntityModule } from './entity-module/GraphicEntityModule.js';
 
 // You can define resources used by your games (like images, fonts, ...)
 export const assets = {
@@ -10,5 +10,5 @@ export const assets = {
 
 // List of viewer modules that you want to use in your game
 export const modules = [
-  {name: 'entitymanager', class: EntityManager}
+	GraphicEntityModule
 ];
