@@ -1,4 +1,6 @@
-This project is the skeleton for the creation of a game using the Game Engine Toolkit of [CodinGame](https://codingame.com). Check the documentation on the [Game Engine repository](https://github.com/CodinGame/codingame-game-engine) github page.
+This project is the skeleton for the creation of a game using the Game Engine Toolkit of [CodinGame](https://codingame.com).
+
+Check the documentation on the [github repository](https://github.com/CodinGame/codingame-sdk-doc).
 
 ## Note about the game turn implementation
 There are 2 ways to implement your game turn according to the game you want to create. **The simultaneous mode** or the **Turn by Turn mode**.
@@ -45,30 +47,8 @@ try {
 
 ## Loading assets
 Assets are expected to be placed in the `src/main/resources/view/assets` folder of your game's project.
-```javascript
-export const assets = {
-  baseUrl: 'assets/',
-  images: {
-    //Each image will be added to the texture cache with the given key.
-    background: 'MyBackround.jpg'
-  },
-  spines: {
-    //Not yet implemented
-  },
-  sprites: [
-    //Each frame of the sprite will be added to the texture cache with the key from the json.
-    //see https://www.leshylabs.com/apps/sstool/
-    'spriteSheet.json'
-  ],
-  fonts: [
-    'myBitmapFont.fnt',
-  ],
-  others: [
-    //Will launch a request for the resource, but cannot yet be used.
-  ]
-};
-```
+
 You can then use the images in the texture cache with the Entity Module:
 ```java
-entityManager.createSprite.setImage("background");
+entityManager.createSprite.setImage("background.jpg");
 ```
