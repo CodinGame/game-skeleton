@@ -1,20 +1,18 @@
 package com.codingame.game;
-import java.util.Properties;
-
 import com.codingame.gameengine.core.AbstractReferee;
-import com.codingame.gameengine.core.GameManager;
+import com.codingame.gameengine.core.MultiplayerGameManager;
 import com.codingame.gameengine.module.entities.GraphicEntityModule;
 import com.google.inject.Inject;
 
 public class Referee extends AbstractReferee {
-    @Inject private GameManager<Player> gameManager;
+    // Uncomment the line below and comment the line under it to create a Solo Game
+    // @Inject private SoloGameManager<Player> gameManager;
+    @Inject private MultiplayerGameManager<Player> gameManager;
     @Inject private GraphicEntityModule graphicEntityModule;
 
     @Override
-    public Properties init(Properties params) {
-        // Params contains all the game parameters that has been to generate this game
-        // For instance, it can be a seed number, the size of a grid/map, ...  
-        return params;
+    public void init() {
+        // Initialize your game here.
     }
 
     @Override
