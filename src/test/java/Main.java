@@ -1,15 +1,27 @@
-import com.codingame.gameengine.runner.GameRunner;
+import com.codingame.gameengine.runner.MultiplayerGameRunner;
 
 public class Main {
     public static void main(String[] args) {
 
-        GameRunner gameRunner = new GameRunner();
-        
-        // Adds as many player as you need to test your game
-        gameRunner.addJavaPlayer(Player1.class);
-        gameRunner.addJavaPlayer(Player2.class);
+        // Uncomment this section and comment the other one to create a Solo Game
+        /* Solo Game */
+        // SoloGameRunner gameRunner = new SoloGameRunner();
 
-        // gameRunner.addCommandLinePlayer("python3 /home/user/player.py");
+        // Sets the player
+        // gameRunner.setAgent(Player1.class);
+
+        // Sets a test case
+        // gameRunner.setTestCase("test1.json");
+
+        /* Multiplayer Game */
+        MultiplayerGameRunner gameRunner = new MultiplayerGameRunner();
+
+        // Adds as many player as you need to test your game
+        gameRunner.addAgent(Player1.class);
+        gameRunner.addAgent(Player2.class);
+
+        // Another way to add a player
+        // gameRunner.addAgent("python3 /home/user/player.py");
 
         gameRunner.start();
     }
