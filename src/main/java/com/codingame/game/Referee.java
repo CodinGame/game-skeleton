@@ -1,4 +1,7 @@
 package com.codingame.game;
+import java.util.List;
+
+import com.codingame.gameengine.core.AbstractPlayer.TimeoutException;
 import com.codingame.gameengine.core.AbstractReferee;
 import com.codingame.gameengine.core.MultiplayerGameManager;
 import com.codingame.gameengine.module.entities.GraphicEntityModule;
@@ -17,7 +20,18 @@ public class Referee extends AbstractReferee {
 
     @Override
     public void gameTurn(int turn) {
-        // Code your game logic.
-        // See README.md if you want some code to bootstrap your project.
+        for (Player player : gameManager.getActivePlayers()) {
+            player.sendInputLine("input");
+            player.execute();
+        }
+
+        for (Player player : gameManager.getActivePlayers()) {
+            try {
+                List<String> outputs = player.getOutputs();
+                // Check validity of the player output and compute the new game state
+            } catch (TimeoutException e) {
+                player.deactivate(String.format("$%d timeout!", player.getIndex()));
+            }
+        }        
     }
 }

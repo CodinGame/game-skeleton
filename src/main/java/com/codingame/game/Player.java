@@ -9,6 +9,6 @@ public class Player extends AbstractMultiplayerPlayer {
         // Returns the number of expected lines of outputs for a player
 
         // TODO: Replace the returned value with a valid number. Most of the time the value is 1. 
-        return 0;
+        return 1;
     }
 }
