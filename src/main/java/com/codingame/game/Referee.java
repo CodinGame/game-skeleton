@@ -1,25 +1,37 @@
 package com.codingame.game;
-import java.util.Properties;
+import java.util.List;
 
+import com.codingame.gameengine.core.AbstractPlayer.TimeoutException;
 import com.codingame.gameengine.core.AbstractReferee;
-import com.codingame.gameengine.core.GameManager;
+import com.codingame.gameengine.core.MultiplayerGameManager;
 import com.codingame.gameengine.module.entities.GraphicEntityModule;
 import com.google.inject.Inject;
 
 public class Referee extends AbstractReferee {
-    @Inject private GameManager<Player> gameManager;
+    // Uncomment the line below and comment the line under it to create a Solo Game
+    // @Inject private SoloGameManager<Player> gameManager;
+    @Inject private MultiplayerGameManager<Player> gameManager;
     @Inject private GraphicEntityModule graphicEntityModule;
 
     @Override
-    public Properties init(Properties params) {
-        // Params contains all the game parameters that has been to generate this game
-        // For instance, it can be a seed number, the size of a grid/map, ...  
-        return params;
+    public void init() {
+        // Initialize your game here.
     }
 
     @Override
     public void gameTurn(int turn) {
-        // Code your game logic.
-        // See README.md if you want some code to bootstrap your project.
+        for (Player player : gameManager.getActivePlayers()) {
+            player.sendInputLine("input");
+            player.execute();
+        }
+
+        for (Player player : gameManager.getActivePlayers()) {
+            try {
+                List<String> outputs = player.getOutputs();
+                // Check validity of the player output and compute the new game state
+            } catch (TimeoutException e) {
+                player.deactivate(String.format("$%d timeout!", player.getIndex()));
+            }
+        }        
     }
 }

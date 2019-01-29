@@ -9,12 +9,12 @@ There are 2 ways to implement your game turn according to the game you want to c
 It's a game mode where all players receive the game data and execute their actions in the same turn. (eg: Race, Pong, ...)
 
 ```java
-for (SkeletonPlayer player : gameManager.getActivePlayers()) {
+for (Player player : gameManager.getActivePlayers()) {
     player.sendInputLine(input);
     player.execute();
 }
 
-for (SkeletonPlayer player : gameManager.getActivePlayers()) {
+for (Player player : gameManager.getActivePlayers()) {
     try {
         List<String> outputs = player.getOutputs();
         // Check validity of the player output and compute the new game state
