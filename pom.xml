@@ -31,11 +31,4 @@
             <version>${gamengine.version}</version>
         </dependency>
     </dependencies>
-    <repositories>
-		<repository>
-		<id>oss</id>
-		<name>oss-codingame-sdk</name>
-		<url>https://oss.sonatype.org/service/local/repositories/releases/content</url>
-		</repository>
-  </repositories>
 </project>
